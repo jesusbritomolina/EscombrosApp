@@ -1,0 +1,407 @@
+:root {
+  --primary-color: #03206f;
+  --secondary-color: #a3d3f4;
+  --background-color: #F6FBFE;
+  --text-color: #03206f;
+  --font-family: 'Roboto', sans-serif;
+}
+
+.App {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: var(--secondary-color);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.centered-table {
+  border-collapse: collapse;
+}
+
+.centered-table th,
+.centered-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center; /* Centrar horizontalmente */
+  vertical-align: middle; /* Centrar verticalmente */
+  font-size: 1rem;
+}
+
+.centered-table th {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+.pagination-item {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.pagination-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination-item.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination-item.active .pagination-link {
+  color: #fff;
+}
+
+.pagination-item.disabled {
+  color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pagination {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.input-container-banco {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.input-container-buscador {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.button-add-call {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.button-table {
+  width: 34px; /* Ajusta el valor según el tamaño que necesites */
+  height: 23px; /* Ajusta el valor según el tamaño que necesites */
+  padding: 0 !important; /* Elimina el padding para no alterar el tamaño del botón */
+  min-width: 34px !important; /* Esto es específico para los botones de Material-UI para sobrescribir su ancho mínimo por defecto */
+  background-color: rgb(240, 240, 240) !important;
+}
+
+#banco {
+  flex-grow: 1;
+  padding-right: 20px; /* para que el texto no se solape con el botón */
+}
+
+.clear-button {
+  position: absolute;
+  top: 50%;  /* esto centrará verticalmente el botón */
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform: translateY(-50%);  /* esto compensará la posición inicial del botón */
+}
+
+.input-id,
+.input-year,
+.input-week {
+  width: 45px;
+}
+
+.input-container-telefono {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+body {
+  transition: background-color 0.5s ease;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family) !important;
+  margin: 0;
+  padding: 0;
+}
+
+.light-mode {
+  padding-right: 0px !important;
+  overflow: auto !important;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.light-mode button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dark-mode button {
+  color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+.light-mode .centered-table th {
+  background-color: #f2f2f2;  /* Color de fondo para las cabeceras de la tabla en modo claro */
+  border-color: #ddd;  /* Color del borde para las cabeceras de la tabla en modo claro */
+  color: #000000;  /* Color de la fuente para las cabeceras de la tabla en modo claro */
+}
+
+.light-mode .centered-table td {
+  background-color: #ffffff;  /* Color de fondo para las celdas de la tabla en modo claro */
+  border-color: #ddd;  /* Color del borde para las celdas de la tabla en modo claro */
+  color: #000000;  /* Color de la fuente para las celdas de la tabla en modo claro */
+}
+
+.dark-mode .centered-table th {
+  background-color: rgb(31, 34, 35);
+  border-color: rgb(58, 62, 65);
+  color: rgb(232, 232, 232);  /* Color de la fuente para las cabeceras de la tabla en modo oscuro */
+}
+
+.dark-mode .centered-table td {
+  background-color: rgb(24, 26, 27);  /* Color de fondo para las celdas de la tabla en modo oscuro */
+  border-color: rgb(58, 62, 65);  /* Color del borde para las celdas de la tabla en modo oscuro */
+  color: rgb(232, 232, 232);  /* Color de la fuente para las celdas de la tabla en modo oscuro */
+}
+
+.pagination-item.active.light-mode {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.pagination-item.active.dark-mode {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.pagination-item.disabled.light-mode {
+  color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-item.disabled.dark-mode {
+  color: rgba(232, 232, 232, 0.6);
+  border-color: rgba(232, 232, 232, 0.6);
+  cursor: not-allowed;
+}
+
+.light-mode .modal-content {
+  background-color: white;
+}
+
+.dark-mode .modal-content {
+  background-color: #424242;
+}
+
+.light-mode .pagination-link {
+  color: #333;
+}
+
+.dark-mode .pagination-link {
+  color: rgb(232, 232, 232);
+}
+
+.light-mode .button-table {
+  background-color: rgb(240, 240, 240) !important;
+}
+
+.dark-mode .button-table {
+  background-color: #424242 !important;
+}
+
+.light-mode .input-container-banco,
+.light-mode .input-container-buscador,
+.light-mode .input-container-telefono,
+.light-mode .button-add-call {
+  background-color: #ffffff;
+  border-color: #ddd;
+  color: #000000;
+}
+
+.dark-mode .input-container-banco,
+.dark-mode .input-container-buscador,
+.dark-mode .input-container-telefono,
+.dark-mode .button-add-call {
+  background-color: #424242;
+  border-color: rgb(58, 62, 65);
+  color: rgb(232, 232, 232);
+}
+
+.light-mode .clear-button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .clear-button {
+  background-color: #424242;
+  color: rgb(232, 232, 232);
+}
+
+.light-mode .input-id,
+.light-mode .input-year,
+.light-mode .input-week {
+  background-color: #ffffff;
+  border-color: #ddd;
+  color: #000000;
+}
+
+.dark-mode .input-id,
+.dark-mode .input-year,
+.dark-mode .input-week {
+  background-color: #424242;
+  border-color: rgb(58, 62, 65);
+  color: rgb(232, 232, 232);
+}
+
+.dark-mode .captura,
+.dark-mode .selecciona {
+  color: #3391ff;
+}
+
+.dark-mode .form-container {
+  background-color: rgb(24, 26, 27) !important;
+  border-color: rgb(58, 62, 65) !important;
+  color: rgb(232, 230, 227) !important;
+}
+
+.dark-mode .select {
+  background-color: rgb(24, 26, 27); /* Color de fondo oscuro */
+  color: #d8d4cf; /* Color de texto claro */
+  border-color: rgb(58, 62, 65); /* Color de borde */
+  border: 1px solid rgb(58, 62, 65);
+}
+
+.dark-mode .buscador {
+  background-color: rgb(24, 26, 27); /* Color de fondo oscuro */
+  color: #d8d4cf; /* Color de texto claro */
+  border-color: rgb(58, 62, 65); /* Color de borde */
+  border: 1px solid rgb(58, 62, 65);
+}
+
+.dark-mode .inputs {
+  background-color: #1565c0; /* Color de fondo oscuro */
+}
+
+.dark-mode .textfields {
+  background-color: rgb(24, 26, 27); /* Color de fondo oscuro */
+  color: #d8d4cf; /* Color de texto claro */
+  border-color: #3e4446; /* Color de borde */
+  border: 1px solid #3e4446;
+}
+
+.dark-mode .textfields-readonly {
+  background-color: #505050; /* Color de fondo oscuro */
+  color: #d8d4cf; /* Color de texto claro */
+  border-color: #3e4446; /* Color de borde */
+  border: 1px solid #3e4446;
+}
+
+.dark-mode .labels {
+  color: #888888; /* Color de texto claro */
+}
+
+.dark-mode .input-container-banco {
+  background-color: transparent; /* O el color de fondo de tu página en modo oscuro */
+}
+
