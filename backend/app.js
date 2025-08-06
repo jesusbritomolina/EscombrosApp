@@ -7,7 +7,6 @@ const authRoutes = require('./routes/authRoutes');
 const workerRoutes = require('./routes/workerRoutes');
 const userManagementRoutes = require('./routes/userManagementRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-const serviceRoutes = require('./routes/serviceRoutes');
 const { backupData } = require('./controllers/adminController');
 const { sequelize } = require('./config/database');
 const executeSQLScript = require('./config/sql_scripts');
@@ -40,7 +39,6 @@ app.use('/api/auth', authRoutes);
 app.use('/api/workers', workerRoutes);
 app.use('/api/owners', userManagementRoutes);
 app.use('/api/admins', adminRoutes);
-app.use('/api/services', serviceRoutes);
 
 // Solo servir archivos del frontend en desarrollo
 if (process.env.NODE_ENV !== 'production') {
@@ -54,7 +52,7 @@ if (process.env.NODE_ENV !== 'production') {
 } else {
   // En producción, solo servir la API
   app.get('/', (req, res) => {
-    res.json({ message: 'JS Home Services API está funcionando correctamente' });
+    res.json({ message: 'EscombrosApp API está funcionando correctamente' });
   });
   
   // Manejar rutas no encontradas en producción

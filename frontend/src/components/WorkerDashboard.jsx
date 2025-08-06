@@ -441,7 +441,7 @@ const WorkerDashboard = ({ userRole, toggleDarkMode, darkMode, loggedInUser, isA
       <Box m={4}>
         <Grid container>
           <Grid item xs={12} md={6} style={{textAlign: "center", maxWidth: "100%", margin: "0 auto", flexBasis: "100%"}}>
-            <Typography variant="h7" component="h1" gutterBottom align="center" style={{ marginBottom: '11.20px' }}>Panel de trabajador</Typography>
+              <Typography variant="h7" component="h1" gutterBottom align="center" style={{ marginBottom: '11.20px' }}>Panel de trabajador</Typography>
 
               <Box component="div" style={{ marginBottom: '14px' }}>
                 <strong>Fecha:</strong>

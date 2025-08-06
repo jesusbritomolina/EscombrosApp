@@ -149,7 +149,7 @@ const Navigation = ({ toggleDarkMode, darkMode, isAuthenticated, userRole, logge
         <Toolbar>
           <Typography variant="h6" component="div">
             <RouterLink title="Inicio" to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              JS Home Services
+              EscombrosApp
             </RouterLink>
           </Typography>
           <Box sx={{ flexGrow: 1 }} />

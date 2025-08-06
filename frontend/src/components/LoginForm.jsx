@@ -8,7 +8,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Alert from '@mui/material/Alert';
 import ForgotPasswordForm from './ForgotPasswordForm';
 import Navigation from './Navigation';
-import { getCorrectRole, NEW_ROLES } from '../utils/roleMapping';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -44,7 +43,7 @@ const LoginForm = ({ updateUserRole, toggleDarkMode, darkMode }) => {
     const token = localStorage.getItem('token');
     const storedUserRole = localStorage.getItem('userRole');
 
-    if (!token || !storedUserRole) {
+    if (!token || (storedUserRole !== 'Propietario' && storedUserRole !== 'Administrador' && storedUserRole !== 'Trabajador')) {
       setIsAuthenticated(false);
     } else {
       setIsAuthenticated(true);
@@ -89,11 +88,10 @@ const LoginForm = ({ updateUserRole, toggleDarkMode, darkMode }) => {
         const token = response.data.token;
         const rol = response.data.rol;
         const username = response.data.username;
-        const correctRole = getCorrectRole(rol);
     
         localStorage.setItem('token', token);
-        updateUserRole(correctRole);
-        localStorage.setItem('userRole', correctRole);
+        updateUserRole(rol);
+        localStorage.setItem('userRole', rol);
         localStorage.setItem('username', username);
     
         setMessage('Inicio de sesión exitoso');
@@ -104,12 +102,11 @@ const LoginForm = ({ updateUserRole, toggleDarkMode, darkMode }) => {
         resetForm();
     
         setTimeout(() => {
-          const correctRole = getCorrectRole(rol);
-          if (correctRole === NEW_ROLES.TRANSPORTISTA) {
+          if (rol === 'Trabajador') {
             navigate('/worker-dashboard');
-          } else if (correctRole === NEW_ROLES.ADMINISTRADOR) {
+          } else if (rol === 'Administrador') {
             navigate('/admin-dashboard');
-          } else if (correctRole === NEW_ROLES.CLIENTE) {
+          } else if (rol === 'Propietario') {
             navigate('/owner-dashboard');
           } else {
             setMessage('Error al redirigir. Rol desconocido.');

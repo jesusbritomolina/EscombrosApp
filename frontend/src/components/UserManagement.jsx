@@ -55,7 +55,7 @@ const AuthWrapper = () => {
     const token = localStorage.getItem('token');
     const storedUserRole = localStorage.getItem('userRole');
 
-    // Si el token es nulo o el usuario no es propietario, no está autenticado
+    // Si el token es nulo o el usuario no es cliente, no está autenticado
     if (!token || storedUserRole !== 'Propietario') {
       setIsAuthenticated(false);
     } else {

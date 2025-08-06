@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Box, Container, Grid, Card, CardMedia, CardContent } from '@mui/material';
 import sliderImage from '../assets/Slider.jpg';
-import aboutImage from '../assets/Logo-JS-Complete.jpg';
+import aboutImage from '../assets/Logo-Escombros.jpg';
 import s1Image from '../assets/s-1.jpg';
 import s2Image from '../assets/s-2.jpg';
 import s3Image from '../assets/s-3.jpg';
@@ -27,42 +27,42 @@ const Home = ({ toggleDarkMode, darkMode }) => {
 
   const services = [
     {
-      title: 'Plumbing',
+      title: 'Escombros',
       image: s1Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'HVAC',
+      title: 'Recolección de Tierra',
       image: s2Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Electrical',
+      title: 'Transporte de Concreto',
       image: s3Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Locksmith',
+      title: 'Limpieza de Obras',
       image: s4Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Pest Control',
+      title: 'Retiro de Materiales',
       image: s5Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Appliance Repair',
+      title: 'Transporte de Arena',
       image: s6Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Towing',
+      title: 'Desechos',
       image: s7Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Water Damage',
+      title: 'Limpieza de Terrenos',
       image: s8Image,
       imageSize: { height: '200px' }
     },
@@ -70,26 +70,26 @@ const Home = ({ toggleDarkMode, darkMode }) => {
 
   const works = [
     {
-      title: 'Registro',
-      description: 'Inscripción y solicitud de teléfono',
+      title: 'Solicitud',
+      description: 'Registro y solicitud de servicio',
       image: w1Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Promoción',
-      description: 'Publicidad y soporte a clientes',
+      title: 'Cotización',
+      description: 'Cálculo automático de precios',
       image: w2Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Pago',
-      description: 'Añadir método de pago',
+      title: 'Transporte',
+      description: 'Recolección y entrega',
       image: w3Image,
       imageSize: { height: '200px' }
     },
     {
-      title: 'Ganancias',
-      description: 'Seguimiento de ingresos y pago',
+      title: 'Pago',
+      description: 'Procesamiento seguro de pagos',
       image: w4Image,
       imageSize: { height: '200px' }
     },
@@ -132,10 +132,10 @@ const Home = ({ toggleDarkMode, darkMode }) => {
             </Box>
             <Box sx={{ flex: '1 1 auto', textAlign: { xs: 'center', md: 'left', lg: 'left' }, overflow: 'hidden' }}>
               <Typography variant={isSmallScreen ? "h4" : "h1"} gutterBottom component="div" sx={{ wordWrap: 'break-word', fontWeight: 'bold', fontSize: '4rem' }}>
-                JS <br /> Home <br /> Services
+                <br /> <br /> EscombrosApp
               </Typography>
               <Typography variant="body1" gutterBottom sx={{ wordWrap: 'break-word' }}>
-                Gana Mientras Haces Promoción En Línea Desde Casa
+                Ubica el servicio de recolección ideal según tu material, peso y ubicación.
               </Typography>
             </Box>
           </Box>
@@ -152,8 +152,8 @@ const Home = ({ toggleDarkMode, darkMode }) => {
             <img src={aboutImage} alt="" style={{ maxWidth: '100%', height: 'auto' }} />
           </Box>
           <Typography variant="body1" paragraph>
-            Somos un equipo dedicado a la prestación de servicios para el hogar. Utilizando las redes sociales como herramienta primordial. 
-            Estando al alcance de cada familia que necesite de nuestros servicios. Js Home Services
+            Somos una plataforma especializada en servicios de transporte y recolección de escombros. Conectamos clientes con transportistas profesionales. 
+            Estando al alcance de cada proyecto que necesite de nuestros servicios. EscombrosApp
           </Typography>
         </Container>
       </Box>

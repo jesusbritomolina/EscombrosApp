@@ -12,7 +12,6 @@ import ForgotPasswordForm from './components/ForgotPasswordForm';
 import ResetPasswordForm from './components/ResetPasswordForm';
 import VerifyEmail from './components/VerifyEmail';
 import PaymentMethodPage from './components/PaymentMethodPage';
-import ServiceRequest from './components/ServiceRequest';
 
 function App() {
   const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || '');
@@ -159,15 +158,6 @@ function App() {
                 darkMode={darkMode} 
                 loggedInUser={loggedInUser} 
                 updateLoggedInUsername={setLoggedInUser}
-              />
-            }
-          />
-          <Route
-            path="/service-request"
-            element={
-              <ServiceRequest 
-                toggleDarkMode={toggleDarkMode} 
-                darkMode={darkMode} 
               />
             }
           />
