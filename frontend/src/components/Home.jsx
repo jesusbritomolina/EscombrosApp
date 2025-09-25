@@ -125,13 +125,14 @@ const Home = ({ toggleDarkMode, darkMode }) => {
             flexDirection: { xs: 'column', md: 'row' },
             alignItems: { xs: 'center', md: 'stretch' },
             padding: 0, 
-            justifyContent: 'space-between' 
+            justifyContent: 'space-between',
+            gap: { xs: 2, md: 4 },  
           }}>
             <Box sx={{ flex: '1 1 auto', overflow: 'hidden', marginBottom: { xs: 2, md: 0 } }}>
               <img src={sliderImage} alt="slider" style={{ maxWidth: '100%', height: 'auto' }} />
             </Box>
             <Box sx={{ flex: '1 1 auto', textAlign: { xs: 'center', md: 'left', lg: 'left' }, overflow: 'hidden' }}>
-              <Typography variant={isSmallScreen ? "h4" : "h1"} gutterBottom component="div" sx={{ wordWrap: 'break-word', fontWeight: 'bold', fontSize: '4rem' }}>
+              <Typography variant={isSmallScreen ? "h4" : "h1"} gutterBottom component="div" sx={{ wordWrap: 'break-word', fontWeight: 'bold', fontSize: '3rem' }}>
                 <br /> <br /> EscombrosApp
               </Typography>
               <Typography variant="body1" gutterBottom sx={{ wordWrap: 'break-word' }}>
